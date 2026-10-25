@@ -1,0 +1,36 @@
+class Pet:
+    def __init__(self, name):
+        self.name = name
+        self.energy = 50
+
+    def eat(self):
+        self.energy += 20
+        print(f" {self.name}에게 밥을 줬습니다! (에너지: {self.energy})")
+
+def show_status(any_pet):
+    print(f"\n {any_pet.name}의 현재 에너지: {any_pet.energy}")
+
+
+# ==========================================
+
+
+#이름 입력받고 객체 만들기
+pet_name = input("반려동물의 이름을 입력하세요: ")
+my_pet = Pet(pet_name)  
+print(f" {my_pet.name}가 태어났습니다!")
+
+
+#반복문과 조건문으로 메뉴 만들기
+while True:
+    show_status(my_pet)  
+    print("1. 밥주기 | 2. 종료")
+
+    choice = input("메뉴 번호 입력: ")
+
+    if choice == "1":
+        my_pet.eat()  
+    elif choice == "2":
+        print(" 프로그램을 종료합니다!")
+        break 
+    else:
+        print("!! 1번이나 2번을 눌러주세요. !!")
